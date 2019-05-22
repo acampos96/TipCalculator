@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculadora de Propina</title>
+  </head>
+  <body class="bg-info">
+    <div class="jumbotron bg-dark title1 text-center">
+        <h1  class="bg-light text-info inner">Calculadora de Propinas</h1>
+    </div>
+    <div class="container bg-dark title1 text-light" style="padding-bottom: 5px; margin-bottom:5px" >
+
+      <div class="form-group">
+        <label for="subtotal">Subtotal</label>
+        <input step="0.01" type="number" class="form-control" id="subtotal" aria-describedby="subtotalHelp" placeholder="Subtotal de la Cuenta">
+        <small id="subtotalHelp" class="form-text text-muted">Total de la cuenta a calcular.</small>
+      </div>
+      <div class="form-group">
+        <label for="percentage">Porcentaje de Propina</label>
+        <input type="number" step="0.01" class="form-control" id="tipPercentage" placeholder="Porcentaje de propina a dejar. Ej: 0.10">
+      </div>
+      <div class="form-group ">
+        <label  for="partyOf">Personas a Pagar</label>
+        <input type="number" class="form-control" id="partyOf" placeholder="Total de personas a pagar">
+      </div>
+      <button type="button" class="btn btn-lg btn-block btn-info" onclick="calcular();">Calcular</button>
+      <label id="total" class="totallabel">Su total a pagar de propina es: </label>
+      <label id="tip" class="bg-light text-dark h4 total1"></label><br>
+      <label id="total" class="totallabel">Su total a pagar individual de propina es: </label>
+      <label id="individualTip" class="bg-light text-dark h4 total1"></label>
+    </div>
+    <script type="text/javascript">
+      function calcular(){
+        var totalTip, myTip;
+
+        totalTip=(parseFloat(document.getElementById('subtotal').value)*parseFloat(document.getElementById('tipPercentage').value));
+        myTip=totalTip/(parseFloat(document.getElementById('partyOf').value));
+        document.getElementById('tip').innerHTML="$ " + totalTip.toFixed(2).toString();
+        document.getElementById('individualTip').innerHTML="$ "+ myTip.toFixed(2).toString();
+      }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  </body>
+</html>

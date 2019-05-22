@@ -1,0 +1,19 @@
+.title1{
+  width: 64rem;
+  heigth: 8.5rem;
+  margin-left: 11rem;
+  margin-right: 11rem;
+  padding: 2rem
+}
+.inner{
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+.total1{
+  margin-top: 10px;
+  text-align: center;
+  width:25%;
+}
+.totallabel{
+  width: 74.5%
+}
